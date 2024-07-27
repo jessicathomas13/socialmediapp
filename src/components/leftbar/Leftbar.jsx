@@ -1,4 +1,4 @@
-import React from "react"
+import React from "./leftbar.css"
 
 export default function Leftbar() {
   return (
