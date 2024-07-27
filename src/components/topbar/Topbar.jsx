@@ -6,7 +6,7 @@ export default function Topbar(){
     return(
         <div className="topbarcont">
             <div className="topbarLeft">
-                <span className="badge">Poopstagram</span>
+                <span className="badge">MySpace</span>
             </div>
             <div className="topbarCenter">
             <Search />
