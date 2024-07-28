@@ -3,7 +3,7 @@
 }
 
 .rightbarWrapper{
-    padding: 30px 30px 1px 1px;
+    padding: 20px 20px 0 0;
 
 }
 
@@ -35,3 +35,48 @@
     list-style: none;
 }
 
+.rightbarTitle{
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 10px;
+
+}
+
+.rightBarInfo{
+    margin-bottom: 30px;
+}
+
+.rightbarInfoItem{
+    margin-bottom: 10px;
+}
+
+.rightbarInfoKey{
+    font-weight: 500;
+    margin-right: 9px;
+    color: #555;
+}
+
+.rightbarInfoValue{
+    font-weight: 200;
+}
+
+.rightbarFollowings{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+.rightbarFollowing{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.rightBarFollowingImg{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    
+}
