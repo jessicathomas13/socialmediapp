@@ -35,37 +35,3 @@
     list-style: none;
 }
 
-.Friend{
-    margin-bottom: 5%;
-    align-items: center;
-    display: flex;
-}
-
-.rightImgContainer{
-    display: flex;
-    position: static;
-    margin-right: 10px;
-}
-
-.rightProfile{
-    object-fit: cover;
-    border-radius: 10%;
-    height: 43px;
-    width: 35px;
-}
-
-.rightOnline{
-    border: 2px solid white;
-    top: -4px;
-    right: 4px;
-    background-color: limegreen;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    position: relative;
-
-}
-
-.Username{
-    font-weight: 450;
-}

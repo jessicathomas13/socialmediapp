@@ -1,5 +1,6 @@
-import React from "./rightbar.css"
-
+import "./rightbar.css"
+import Online from "../online/Online"
+import {Users} from "../../userData"
 export default function Rightbar() {
   return (
     <div className="rightbar">
@@ -10,32 +11,8 @@ export default function Rightbar() {
         </div>
         <h4 className="rbarTitle">Friends Online</h4>
         <ul className="FriendList">
-          <li className="Friend">
-              <div className="rightImgContainer">
-                <img className="rightProfile" src="assets/profiles/profile3.jpg" alt=""/>
-                <span className="rightOnline"></span>
-              </div>
-              <span className="Username">John Reed</span>
-          </li>
-          <li className="Friend">
-              <div className="rightImgContainer">
-                <img className="rightProfile" src="assets/profiles/profile4.jpg" alt=""/>
-                <span className="rightOnline"></span>
-              </div>
-              <span className="Username">Alissa May</span>
-          </li><li className="Friend">
-              <div className="rightImgContainer">
-                <img className="rightProfile" src="assets/profiles/profile5.jpg" alt=""/>
-                <span className="rightOnline"></span>
-              </div>
-              <span className="Username">Esther Chen</span>
-          </li><li className="Friend">
-              <div className="rightImgContainer">
-                <img className="rightProfile" src="assets/profiles/profile6.jpg" alt=""/>
-                <span className="rightOnline"></span>
-              </div>
-              <span className="Username">Mitchell Barnes</span>
-          </li>
+          {Users.map(u=>(<Online key={u.id} user={u} />))}
+          
         </ul>
       </div>
     </div>
