@@ -56,13 +56,13 @@
 
 .rightOnline{
     border: 2px solid white;
-    top: -2px;
-    right: -2px;
+    top: -4px;
+    right: 6px;
     background-color: goldenrod;
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    position: absolute;
+    position: relative;
 
 }
 
