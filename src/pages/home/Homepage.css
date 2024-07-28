@@ -1,3 +1,4 @@
-.HomepageContainer{
+.homeContainer{
     display: flex;
+    width: 100%;
 }
