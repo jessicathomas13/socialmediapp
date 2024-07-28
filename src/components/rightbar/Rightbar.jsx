@@ -15,7 +15,7 @@ export default function Rightbar() {
                 <img className="rightProfile" src="assets/profiles/profile3.jpg" alt=""/>
                 <span className="rightOnline"></span>
               </div>
-              <span className="Username">Andy Johnson</span>
+              <span className="Username">John Reed</span>
           </li>
           <li className="Friend">
               <div className="rightImgContainer">

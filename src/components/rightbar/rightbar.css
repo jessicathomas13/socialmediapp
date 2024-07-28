@@ -42,6 +42,7 @@
 }
 
 .rightImgContainer{
+    display: flex;
     position: relative;
     margin-right: 10px;
 }
