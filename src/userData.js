@@ -110,7 +110,7 @@ export const Posts = [
         description: "carnival",
         photo: "assets/posts/post3.jpg",
         date:"20 minutes ago",
-        userID: 3,
+        userID: 13,
         like: 50,
         comments: 5,
     },
