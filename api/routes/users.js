@@ -64,6 +64,13 @@ router.get("/:id", async(req, res)=>{
     
 });
 
+// Follow a user
+router.put("/:id/follow", async (req,res)=>{
+    if(req.body.userId !== req.params.id){
 
+    }else{
+        res.status(403)
+    }
+})
 
 module.exports = router
