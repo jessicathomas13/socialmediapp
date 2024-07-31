@@ -7,6 +7,7 @@ import Left from "../../components/leftbar/Left";
 
 
 export default function Profile() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <>
     <Topbar/>
@@ -15,8 +16,8 @@ export default function Profile() {
         <div className="profileRight">
           <div className="profileRightTop">
             <div className="profileCover">
-              <img className="profileCoverImg" src="assets/posts/post1.jpg" alt=""/>
-              <img className="profileImg" src="assets/profiles/profile1.jpg" alt=""/>
+              <img className="profileCoverImg" src={`${PF}posts/post1.jpg`} alt=""/>
+              <img className="profileImg" src={`${PF}profiles/profile1.jpg`} alt=""/>
             </div>
             <div className="profileInfo">
               <h4 className="profileName">Matthew Peterson</h4>

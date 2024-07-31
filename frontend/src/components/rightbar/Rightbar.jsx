@@ -2,7 +2,7 @@ import "./rightbar.css"
 import Online from "../online/Online"
 import {Users} from "../../userData"
 export default function Rightbar({profile}) {
-
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const HomeRightBar = () => {
     return(
       <>
@@ -43,33 +43,22 @@ export default function Rightbar({profile}) {
       <h4 className="rightBarTitle">User Friends</h4>
       <div className="rightbarFollowings">
         <div className="rightbarFollowing">
-          <img src="assets/profiles/profile2.jpg" alt="" className="rightBarFollowingImg" />
+          <img src={`${PF}profiles/profile2.jpg`} alt="" className="rightBarFollowingImg" />
           <span className="rightbarFollowingUsername">katie buchanan</span>
         </div>
         <div className="rightbarFollowing">
-          <img src="assets/profiles/profile3.jpg" alt="" className="rightBarFollowingImg" />
+          <img src={`${PF}profiles/profile3.jpg`} alt="" className="rightBarFollowingImg" />
           <span className="rightbarFollowingUsername">john reed</span>
         </div>
         <div className="rightbarFollowing">
-          <img src="assets/profiles/profile4.jpg" alt="" className="rightBarFollowingImg" />
+          <img src={`${PF}profiles/profile4.jpg`} alt="" className="rightBarFollowingImg" />
           <span className="rightbarFollowingUsername">alissa may</span>
         </div>
         <div className="rightbarFollowing">
-          <img src="assets/profiles/profile5.jpg" alt="" className="rightBarFollowingImg" />
+          <img src={`${PF}profiles/profile5.jpg`} alt="" className="rightBarFollowingImg" />
           <span className="rightbarFollowingUsername">esther chen</span>
         </div>
-        <div className="rightbarFollowing">
-          <img src="assets/profiles/profile6.jpg" alt="" className="rightBarFollowingImg" />
-          <span className="rightbarFollowingUsername">mitchelll barnes</span>
-        </div>
-        <div className="rightbarFollowing">
-          <img src="assets/profiles/profile7.jpg" alt="" className="rightBarFollowingImg" />
-          <span className="rightbarFollowingUsername">ethan ramon</span>
-        </div>
-        <div className="rightbarFollowing">
-          <img src="assets/profiles/profile8.jpg" alt="" className="rightBarFollowingImg" />
-          <span className="rightbarFollowingUsername">Michael Gonsalves</span>
-        </div>
+        
       </div>
 
       </>
