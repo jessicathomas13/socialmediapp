@@ -1,28 +1,42 @@
-import "./post.css"
-import { MoreVert } from "@material-ui/icons"
-import{ useState } from "react";
-import axios from "axios"
-import { useState, useEffect } from "react";
+import "./post.css";
+import { MoreVert } from "@material-ui/icons";
+import axios from "axios";
+import { useState, useEffect, useContext } from "react";
+import {format} from "timeago.js";
+import {Link} from "react-router-dom";
+import { Context } from "../../context/Context";
+
+
 
 export default function Post({post}) {
   const [like, setLike] = useState(post.likes.length)
   const [isLiked, setIsLiked] = useState(false)
-  const [user, setuser] = useState({})
-
+  const [user, setUser] = useState({})
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const {user:currentUser} = useContext(Context)
   
 
   useEffect(()=>{
-    const fetchuser = async ()=>{
-      const res = await axios.get('users/${post.userId}')
-      setuser(res.data)
+    const fetchUser = async ()=>{
+      const res = await axios.get(`/users?userId=${post.userId}`);
+      setUser(res.data);
     }
-    fetchuser()
-  },[])
+    fetchUser()
+  },[post.userId]);
+
+  useEffect(()=>{
+    setIsLiked(post.likes.includes(currentUser._id))
+  },[currentUser._id,post.likes])
 
   const likeHandler =()=>{
-    setLike(isLiked ? like-1 : like+1)
+    try{
+      axios.put("/posts/"+post._id+"/like", {userId:currentUser._id})
+      setLike(isLiked ? like-1 : like+1)
     setIsLiked(!isLiked)
+    }catch(error){
+
+    }
+    
   }
 
   return (
@@ -30,16 +44,18 @@ export default function Post({post}) {
       <div className="postWrapper">
         <div className="postTop">
             <div className="postTopLeft">
-                <img className="postProfileImg" src={user.profilePicture || PF+"assets/none.png"} alt="" />
+              <Link to={`profile/${user.username}`}>
+              <img className="postProfileImg" src={user.profileImg ? PF + user.profileImg : PF+"none.jpg"} alt="" />
+              </Link>
                 <span className="postUsername">{user.username}</span>
-                <span className="postDate">{post.date}</span>
+                <span className="postDate">{format(post.createdAt)}</span>
             </div>
             <div className="postTopRight">
                 <MoreVert/>
             </div>
         </div>
         <div className="postCenter">
-            <span className="postText">{post?.description}</span>
+            <span className="postText">{post?.desc}</span>
             <img className="postImg" src={PF+post.img} alt="" />
         </div>
         <div className="postBottom">
