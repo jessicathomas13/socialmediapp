@@ -8,7 +8,7 @@ import {useNavigate} from "react-router"
 export default function Login() {
   const email = useRef();
   const password = useRef();
-  const {user, isFetching,dispatch} = useContext(Context);
+  const {isFetching,dispatch} = useContext(Context);
   let navigate = useNavigate(); 
   
   const routeChange = () =>{ 
@@ -37,11 +37,11 @@ export default function Login() {
                 <input placeholder="Email address" type="email" required className="loginInput" ref={email}/>
                 <input placeholder="Password" type="password" required minLength="8" className="loginInput" ref={password}/>
                 <button className="loginButton" type="submit" disabled={isFetching}>
-                  {isFetching ? <CircularProgress color="white" size="22px"/> : "Log In"}
+                  {isFetching ? <CircularProgress size="22px"/> : "Log In"}
                 </button>
                 <span className="loginForgot">Forgot Password</span>
 
-                <button className="loginRegisterButton" onClick={routeChange}>{isFetching ? <CircularProgress color="white" size="22px"/> : "Create an account"}</button>
+                <button className="loginRegisterButton" onClick={routeChange}>{isFetching ? <CircularProgress size="22px"/> : "Create an account"}</button>
                 
             </form>
         </div>
