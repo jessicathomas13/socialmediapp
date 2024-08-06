@@ -37,6 +37,12 @@ const Reducer = (state,action) =>{
                     following: state.user.following.filter((following) => following !== action.payload ),
                 },
             };
+        case "LOGOUT":
+            return {
+                user:localStorage.setItem("user", null),
+                isFetching:false,
+                error:false
+            };
         default:
             return state;
     }

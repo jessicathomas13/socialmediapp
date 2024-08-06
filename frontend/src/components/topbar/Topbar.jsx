@@ -1,19 +1,24 @@
 import "./topbar.css";
-import {Search, Person, Chat, Notifications} from "@material-ui/icons"
+import {Search, Person, Chat, Notifications, ExitToApp} from "@material-ui/icons"
 import { useContext } from "react";
 import {Link} from "react-router-dom"
 import { Context } from "../../context/Context";
+import {logoutCall} from '../../apiCall';
 
 export default function Topbar(){
 
-    const {user} = useContext(Context);
+    const {user, dispatch} = useContext(Context);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+    const handleClick = () => {
+        logoutCall(dispatch);
+      }
 
     return(
         <div className="topbarContainer">
             <div className="topbarLeft">
                 <Link to="/" style={{textDecoration:"none"}}> 
-                <span className="badge">MySpace</span> 
+                <span className="badge">Social Network</span> 
                 </Link>
             </div>
             <div className="topbarCenter">
@@ -45,10 +50,14 @@ export default function Topbar(){
                     </div>
 
                 </div>
-                <Link to={`/profile/${user.username}`}>
-                <img src={user.profileImg ? PF+user.profileImg : PF+"none.jpg"} alt="" className="topbarImg" />
-
+                <Link to={`/profile/${user?.username}`}>
+                <img src={user?.profileImg ? PF+user?.profileImg : PF+"none.jpg"} alt="" className="topbarImg" />
                 </Link>
+                <div>
+                    <ExitToApp className="topbarLink" onClick={handleClick}/>
+                  
+                </div>
+                
             </div>
         </div>
     );

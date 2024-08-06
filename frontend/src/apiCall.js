@@ -10,3 +10,7 @@ export const loginCall = async(user,dispatch) =>{
 
     }
 }
+
+export const logoutCall = async (dispatch) => {
+    dispatch({ type: "LOGOUT" });
+  };

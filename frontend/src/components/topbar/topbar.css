@@ -114,3 +114,14 @@ body, html {
     object-fit: cover;
     cursor: pointer;
 }
+
+.topbarLink{
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;;
+    
+}
+
+.topbarLogOut{
+    cursor: pointer;
+}

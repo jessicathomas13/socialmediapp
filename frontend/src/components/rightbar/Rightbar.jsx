@@ -17,7 +17,7 @@ export default function Rightbar({user}) {
   useEffect(()=>{
     const getFollowing = async()=>{
       try{
-        const followingList = await axios.get("/users/following/"+user._id);
+        const followingList = await axios.get("/users/following/"+user?._id);
         setFollowing(followingList.data);
 
       }catch(error){
@@ -88,11 +88,11 @@ export default function Rightbar({user}) {
       </div>
       <h4 className="rightBarTitle">User Friends</h4>
       <div className="rightbarFollowings">
-        {following.map((friend) => (
-          <Link to={"/profile/" + friend.username} style={{textDecoration:"none"}}>
+        {following?.map((friend) => (
+          <Link to={"/profile/" + friend?.username} style={{textDecoration:"none"}}>
           <div className="rightbarFollowing">
-            <img src={friend.profileImg ? PF+friend.profileImg : PF+"none.jpg"} alt="" className="rightBarFollowingImg" />
-            <span className="rightbarFollowingUsername">{friend.username}</span>
+            <img src={friend?.profileImg ? PF+friend?.profileImg : PF+"none.jpg"} alt="" className="rightBarFollowingImg" />
+            <span className="rightbarFollowingUsername">{friend?.username}</span>
           </div>
           </Link>
 
