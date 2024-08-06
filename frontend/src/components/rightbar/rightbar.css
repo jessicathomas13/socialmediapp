@@ -80,3 +80,19 @@
     border-radius: 5px;
     
 }
+
+.rightbarFollow{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #a5c193f0;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
